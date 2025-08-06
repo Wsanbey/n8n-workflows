@@ -126,9 +126,10 @@ Examples:
     parser.add_argument(
         "--port", 
         type=int, 
-        default=8000, 
+        default=int(os.environ.get("PORT", 8000)), 
         help="Port to bind to (default: 8000)"
     )
+
     parser.add_argument(
         "--reindex", 
         action="store_true", 
